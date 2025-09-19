@@ -15,7 +15,11 @@ const ChatBox = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:5000/chat", { message: userMessage });
+      // ✅ Call your backend project directly
+      const response = await axios.post(
+        "https://mental-health-backend.vercel.app/chat",
+        { message: userMessage }
+      );
 
       const aiMessage = {
         sender: "ai",
